@@ -13,11 +13,17 @@
     position:absolute;
     width: 5.336vh;
     height: 5.336vh;
+    z-index:1;
     background-color: #E23E57;
     border-radius: 50%;
   }
 
   .score{
+    position: absolute;
+    left: 2.347vh;
+    bottom: 2.347vh;
+    font-size: 36px;
+    color: rgba(49, 29, 63, 0.13);
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */

@@ -27,7 +27,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize}) =>{
                 style={{left:`${randomizePosition()}vh`, top:`${randomizePosition()}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
             </div>
 
-            <div className="score">Score: {score}</div>
+            <div className="score">SCORE: {score}</div>
         </div>
     )
 }
