@@ -1,0 +1,18 @@
+.GameArea {
+    position: relative;
+    text-align: center;
+    background-color: #fafafa;
+    width: 64vh;
+    height: 64vh;
+    margin: 200px auto;
+    border: 1.06vh #311D3F solid;
+    border-radius: 3.73vh;
+  }
+  
+  .target{
+    position:absolute;
+    width: 5.336vh;
+    height: 5.336vh;
+    background-color: #E23E57;
+    border-radius: 50%;
+  }

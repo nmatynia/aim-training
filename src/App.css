@@ -1,20 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.App {
-  position: relative;
+.App{
   text-align: center;
-  background-color: #fafafa;
-  width: 64vh;
-  height: 64vh;
-  margin: 200px auto;
-  border: 1.06vh #311D3F solid;
-  border-radius: 3.73vh;
+  margin: auto;
+  font-family:'Fredoka One';
 }
 
-.target{
-  position:absolute;
-  width: 5.336vh;
-  height: 5.336vh;
-  background-color: #E23E57;
-  border-radius: 50%;
+.appHeader{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 116px;
+  color: #311D3F;
+  margin:6px;
 }
