@@ -8,6 +8,7 @@ interface IState{
   time: number;
   targetSize: number;
   mapSize: number;
+  gameStarting: boolean;
 }
 
 const App: React.FC = () =>{
@@ -16,6 +17,7 @@ const App: React.FC = () =>{
   const [time,setTime] = useState<IState["time"]>(5);
   const [targetSize,setTargetSize] = useState<IState["targetSize"]>(5.336);// 5.336vh
   const [mapSize,setMapSize] = useState<IState["mapSize"]>(50);// 64vh
+  const [gameStarting, setGameStarting] = useState<IState["gameStarting"]>(true)
 
   console.log("Score: ",score)
 
@@ -23,7 +25,15 @@ const App: React.FC = () =>{
     <div className="App">
         <h1 className ="appHeader">Aim Training</h1>
         <Nav/>
-        <GameArea setScore={setScore} score={score} targetSize={targetSize} mapSize={mapSize} time={time}/>
+        <GameArea 
+          setScore={setScore} 
+          score={score} 
+          targetSize={targetSize} 
+          mapSize={mapSize} 
+          time={time}
+          gameStarting={gameStarting}
+          setGameStarting={setGameStarting}
+        />
         <footer className="footer">Norbert Matynia - <a className='github-link' href="https://github.com/nmatynia">github.com/nmatynia</a></footer>
     </div>
   );
