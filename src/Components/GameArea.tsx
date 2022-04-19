@@ -1,14 +1,15 @@
 import React from "react";
 import "../Styles/GameArea.css";
-
+import Timer from './Timer'
 interface IProps{
     score:number
     targetSize:number
     mapSize: number;
-    setScore:React.Dispatch<React.SetStateAction<number>>
+    time: number;
+    setScore:React.Dispatch<React.SetStateAction<number>>;
 }
 
-const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize}) =>{
+const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time}) =>{
     const randomizePosition = ():number =>{
         const maxPosition = mapSize - targetSize + 1;
         const number = Math.floor(Math.random() * maxPosition);
@@ -28,6 +29,8 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize}) =>{
             </div>
 
             <div className="score">SCORE: {score}</div>
+            <Timer time={time} setScore={setScore}/>
+            
         </div>
     )
 }
