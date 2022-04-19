@@ -17,7 +17,36 @@
     background-color: #E23E57;
     border-radius: 50%;
   }
+  .gameStart{
+    position: absolute;
+    width: 30.9498vh;
+    height: 7.7908vh;
+    display:flex;
+    flex-direction: column;
+  }
+  .startButton{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3.842vh;
+    color: rgba(49, 29, 63, 0.83);
+    justify-content: center;
+    align-items: center;
+  }
 
+  .startButton:hover{
+    cursor: pointer;
+    color: #E23E57;
+  }
+
+  .tip{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.5613vh;
+    color: rgba(49, 29, 63, 0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .score{
     position: absolute;
     left: 2.347vh;

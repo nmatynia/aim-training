@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/GameArea.css";
 import Timer from './Timer'
+import {FaSyncAlt} from 'react-icons/fa'
 interface IProps{
     score:number
     targetSize:number
@@ -22,6 +23,12 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time}) =>
     }
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}>
+
+            <div className ='gameStart' style={{left:`${(mapSize-30.9498)/2}vh`, top:`${(mapSize-7.7908)/2}vh`}}>
+                <div className ='startButton'>START</div>
+                <div className ='tip'><FaSyncAlt/>click alt + b for restart</div>
+            </div>
+
             <div 
                 className="target" 
                 onClick ={handleClick()}
