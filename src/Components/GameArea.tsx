@@ -10,9 +10,11 @@ interface IProps{
     setScore:React.Dispatch<React.SetStateAction<number>>;
     gameStarting: boolean;
     setGameStarting: React.Dispatch<React.SetStateAction<boolean>>
+    gameStatus: boolean
+    setGameStatus: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting}) =>{
+const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus}) =>{
     const randomizePosition = ():number =>{
         const maxPosition = mapSize - targetSize + 1;
         const number = Math.floor(Math.random() * maxPosition);
@@ -41,13 +43,27 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             style={{left:`${randomizePosition()}vh`, top:`${randomizePosition()}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
         </div>
     )
+
+    const startingTarget: JSX.Element = (
+        <div 
+            className="target" 
+            onClick ={() => {
+                setGameStatus(true); 
+                setScore(0);
+            }}
+            style={{left:`${(mapSize-targetSize)/2}vh`, top:`${(mapSize-targetSize)/2}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
+        </div>
+    )
+
+    const formattedTime = time > 59 ? `${time/60}:${time%60}`  : (time > 10 ? `0:${time}` : `0:0${time}`)
+
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}>
 
-            {gameStarting ? gameStart : target}
+            {gameStarting ? gameStart : (gameStatus ? target : startingTarget)}
 
             <div className="score">SCORE: {score}</div>
-            {gameStarting?<div className="timer">0:{time}</div>:<Timer time={time} setScore={setScore}/>}
+            {gameStarting || !gameStatus ? <div className="timer">{formattedTime}</div>:<Timer time={time} setScore={setScore} setGameStatus={setGameStatus}/>}
             
         </div>
     )
