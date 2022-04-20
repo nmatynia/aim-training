@@ -1,25 +1,30 @@
 import React from "react";
 import '../Styles/DropdownMenu.css';
-const DropdownMenu:React.FC = () =>{
 
-    interface IProps{
-        children: React.ReactNode
-    }
+interface IProps{
+    name:string
+    children: React.ReactNode
+}
 
-    //this took forever to figure out in typescript 
-    const DropdownItem = ({children}:IProps) =>{
-        return(
-            <div className="menuItem">
-                {children}
-            </div>
-        );
-    }
+const DropdownMenu:React.FC<IProps> = ({children,name}) =>{ 
     return (
-        <div className="dropdown">
-            <DropdownItem>Classic</DropdownItem>
-            <DropdownItem>Frenzy</DropdownItem>
+        <div className={`dropdown-${name}`}>
+            {children}
         </div>
     )
+}
+
+interface IPropsItem{
+    children: React.ReactNode
+}
+//this took forever to figure out in typescript 
+export const DropdownItem = ({children}:IPropsItem) =>{
+    return(
+        //menuItem-${children?.toString().toLowerCase()}
+        <div className={`menuItem`}>
+            {children}
+        </div>
+    );
 }
 
 export default DropdownMenu;

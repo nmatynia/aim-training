@@ -1,13 +1,66 @@
-.dropdown{
+:root{
+    --top-pos: 5.776307vh;
+    /* i regret i didn't use scss for this :( */
+}
+.dropdown-modes{
     position:absolute;
-    top: 75px;
+    top: var(--top-pos);
+    /* 54px for top */
+    left:0;
     width:auto;
     z-index: 3;
-    background-color: grey;
-    padding: 0 35px;
+    background-color: #E23E57;
+    /* padding: 0 35px; */
 }
 
-.menuItem{
-    margin-bottom: 25px;
+.dropdown-customize{
+    position:absolute;
+    top: var(--top-pos);
+    left: calc(164/937*100vh);
+    width:auto;
+    z-index: 3;
+    background-color: #E23E57;
+
+}
+
+.dropdown-difficulty{
+    position:absolute;
+    top: var(--top-pos);
+    left: calc(345/937*100vh);;
+    width:auto;
+    z-index: 3;
+    background-color: #E23E57;
+
+}
+
+.dropdown-about{
+    position:absolute;
+    top: var(--top-pos);
+    left: calc(500/937*100vh);;
+    width:auto;
+    z-index: 3;
+    background-color: #E23E57;
+
+}
+
+.dropdown-modes .menuItem {
+    margin: calc(29/937*100vh) calc(33/937*100vh);
+}
+
+.dropdown-customize .menuItem {
+    margin: calc(29/937*100vh) calc(20/937*100vh);
+}
+
+.dropdown-difficulty .menuItem {
+    margin: calc(29/937*100vh) calc(27/937*100vh);
+}
+
+.dropdown-about .menuItem {
+    margin: calc(29/937*100vh) calc(27/937*100vh);
+}
+
+.menuItem:hover{
+    cursor: pointer;
+    color: #cecece;
 }
 

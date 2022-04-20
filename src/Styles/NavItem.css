@@ -1,4 +1,3 @@
-
 .navItem{
     font-family:'Fredoka One';
     font-size: 2.561vh;
@@ -8,13 +7,17 @@
     padding:0; */
     margin:1.334vh 0;
     margin-right:calc((52/937)*100vh);
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .navItem:nth-of-type(4n){
     margin-right: 0;
 }
 
-.navItem:hover{
+.dropButton:hover{
     cursor: pointer;
     color: #cecece;
 }
