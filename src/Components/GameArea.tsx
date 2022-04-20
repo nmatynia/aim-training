@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState, useRef} from "react";
 import "../Styles/GameArea.css";
 import Timer from './Timer'
 import {FaSyncAlt} from 'react-icons/fa'
+
 interface IProps{
     score:number
     targetSize:number
@@ -15,6 +16,9 @@ interface IProps{
 }
 
 const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus}) =>{
+
+    const missedClicks = useRef(0);
+    
     const randomizePosition = ():number =>{
         const maxPosition = mapSize - targetSize + 1;
         const number = Math.floor(Math.random() * maxPosition);
@@ -23,7 +27,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
     }
 
     const handleClick = () =>{
-        return ()=> setScore(prevState => prevState + 1)
+        return () => setScore(prevState => prevState + 1)
     }
 
     const gameStart: JSX.Element = (
@@ -50,20 +54,28 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             onClick ={() => {
                 setGameStatus(true); 
                 setScore(0);
+                missedClicks.current = 0;
             }}
             style={{left:`${(mapSize-targetSize)/2}vh`, top:`${(mapSize-targetSize)/2}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
         </div>
     )
 
-    const formattedTime = time > 59 ? `${time/60}:${time%60}`  : (time > 10 ? `0:${time}` : `0:0${time}`)
+    
+            
+    const formattedTime = time > 59 ? `${time/60}:${time%60}`  : (time > 10 ? `0:${time}` : `0:0${time}`);
+
+    const calculatedAccuracy = Math.round(score/(score+missedClicks.current)*100*100)/100;
 
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}>
 
             {gameStarting ? gameStart : (gameStatus ? target : startingTarget)}
 
+            <div className="accuracyCounter" onClick={()=>missedClicks.current = missedClicks.current + 1}></div>
+            
             <div className="score">SCORE: {score}</div>
             {gameStarting || !gameStatus ? <div className="timer">{formattedTime}</div>:<Timer time={time} setScore={setScore} setGameStatus={setGameStatus}/>}
+            {!gameStarting && !gameStatus ? <div className ="accuracy">ACCURACY: {calculatedAccuracy}%</div>: null}
             
         </div>
     )
