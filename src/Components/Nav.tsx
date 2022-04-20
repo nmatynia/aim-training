@@ -1,12 +1,24 @@
 import React from "react";
 import '../Styles/Nav.css'
+import NavItem from "./NavItem";
+import DropdownMenu from "./DropdownMenu";
+
 const Nav:React.FC = () =>{
     return(
         <div className="Nav">
-            <button>MODES</button>
-            <button>MAP SIZE</button>
-            <button>DIFFICULTY</button>
-            <button>ABOUT</button>
+            <NavItem text="MODES">
+                <DropdownMenu/>
+            </NavItem>
+            
+            <NavItem text="CUSTOMIZE">
+                <DropdownMenu/>
+            </NavItem>
+            <NavItem text="DIFFICULTY">
+
+            </NavItem>
+            <NavItem text="ABOUT">
+
+            </NavItem>
         </div>
     )
 }

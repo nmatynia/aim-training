@@ -1,0 +1,20 @@
+
+.navItem{
+    font-family:'Fredoka One';
+    font-size: 2.561vh;
+    color:white;
+    background-color: #311D3F;
+    /* border: none;
+    padding:0; */
+    margin:1.334vh 0;
+    margin-right:calc((52/937)*100vh);
+}
+
+.navItem:nth-of-type(4n){
+    margin-right: 0;
+}
+
+.navItem:hover{
+    cursor: pointer;
+    color: #cecece;
+}
