@@ -79,7 +79,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             
             <div className="score">SCORE: {score}</div>
             {gameStarting || !gameStatus ? <div className="timer">{formattedTime}</div>:<Timer time={time} setScore={setScore} setGameStatus={setGameStatus}/>}
-            {!gameStarting && !gameStatus ? <div className ="accuracy">ACCURACY: {calculatedAccuracy}%</div>: null}
+            {!gameStarting && !gameStatus ? <div className ="accuracy">ACCURACY: {!isNaN(calculatedAccuracy)?calculatedAccuracy:"0"}%</div>: null}
             
         </div>
     )
