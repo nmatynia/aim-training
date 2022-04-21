@@ -2,7 +2,6 @@ import React,{useState, useRef} from "react";
 import "../Styles/GameArea.css";
 import Timer from './Timer'
 import {FaSyncAlt} from 'react-icons/fa'
-import BestScore from "./BestScore";
 
 interface IProps{
     score:number
@@ -81,7 +80,6 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             <div className="score">SCORE: {score}</div>
             {gameStarting || !gameStatus ? <div className="timer">{formattedTime}</div>:<Timer time={time} setScore={setScore} setGameStatus={setGameStatus}/>}
             {!gameStarting && !gameStatus ? <div className ="accuracy">ACCURACY: {calculatedAccuracy}%</div>: null}
-            {!gameStarting && !gameStatus ? <BestScore score={score}/>: null}
             
         </div>
     )

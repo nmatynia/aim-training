@@ -67,17 +67,7 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
   }
-  .sessionBest{
-    position: absolute;
-    left: 2.347vh;
-    bottom: calc(96/937*100vh);
-    font-size: calc(24/937*100vh);
-    color: rgba(49, 29, 63, 0.13);
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-  }
+
   .score{
     position: absolute;
     left: 2.347vh;
