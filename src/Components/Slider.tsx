@@ -1,4 +1,5 @@
 import React from "react";
+import '../Styles/Slider.css'
 
 interface IProps{
     min:number;
@@ -13,7 +14,7 @@ const Slider:React.FC<IProps> = ({min,max,val,set,step}) =>{
         set(e.target.valueAsNumber)
     }
     return (
-        <input type="range" min={min} max={max} value={val} step={step} onChange={handleChange}/>
+        <input type="range" min={min} max={max} value={val} step={step} onChange={handleChange} className="slider"/>
     )
 }
 
