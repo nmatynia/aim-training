@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { setSourceMapRange } from "typescript";
 import '../Styles/GameArea.css'
 interface IProps{
     time: number;
@@ -24,10 +23,12 @@ const Timer:React.FC<IProps> =({time,setScore,setGameStatus}) =>{
           clearInterval(interval)
         }
       }, [counter]);
+      
+      const formattedCounter:string  = counter > 59 ? `${Math.floor(counter/60)}:${counter%60 !== 0 ? counter%60: "00"}`  : (counter >= 10 ? `0:${counter}` : `0:0${counter}`);
 
     return(
         <div className='timer'>
-            {counter > 59 ? `${counter/60}:${counter%60}`  : (counter > 10 ? `0:${counter}` : `0:0${counter}`)}
+            {formattedCounter}
         </div>
     )
 }
