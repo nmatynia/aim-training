@@ -10,7 +10,7 @@
     position:absolute;
     top: var(--top-pos);
     /* 54px for top */
-    left:0;
+    left:-1px;
     width:auto;
     z-index: 7;
     background-color: #E23E57;
@@ -26,7 +26,6 @@
     z-index: 7;
     background-color: #E23E57;
     border-radius: var(--border-radius);
-
 }
 
 .dropdown-difficulty{
@@ -42,7 +41,7 @@
 .dropdown-about{
     position:absolute;
     top: var(--top-pos);
-    left: calc(290/937*100vh);;
+    left: calc(287/937*100vh);;
     width:auto;
     z-index: 7;
     background-color: #E23E57;
@@ -68,7 +67,13 @@
 
 .menuItem:hover{
     cursor: pointer;
-    color: #cecece;
+    color: #ffb7c3;
+    transition: color 0.2s linear 0.1s;
+}
+
+.dropdown-about .menuItem:hover{
+    cursor:auto;
+    color:white;
 }
 
 .dropdown-customize .menuItem:hover{
