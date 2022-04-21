@@ -72,7 +72,7 @@
     position: absolute;
     left: 2.347vh;
     bottom: 2.347vh;
-    font-size: 36px;
+    font-size: calc(36/937*100vh);
     color: rgba(49, 29, 63, 0.13);
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
@@ -84,7 +84,7 @@
     position: absolute;
     right: 2.347vh;
     bottom: 2.347vh;
-    font-size: 36px;
+    font-size: calc(36/937*100vh);
     color: rgba(49, 29, 63, 0.13);
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
