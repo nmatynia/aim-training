@@ -36,4 +36,16 @@
 .navItem.dropButtonOpened{
     background-color:#E23E57;
     border-radius: var(--on-open-radius) var(--on-open-radius) 0 0;
+    animation-duration: 0.4s;
+    animation-name: ondropbutton;
 } 
+
+@keyframes ondropbutton {
+    from {
+        background-color: #311D3F;
+    }
+  
+    to {
+        background-color: #E23E57;
+    }
+  }
