@@ -29,13 +29,9 @@
 
 .dropButton:hover{
     cursor: pointer;
-    color: #cecece;
+    color: #bbabc4;
+    transition: color 0.2s linear 0.1s;
 }
-
-/* .dropButton.dropButtonOpened{
-    padding: 12px calc(40/937*100vh) 13px calc(40/937*100vh);
-    background-color:#E23E57;
-} */
 
 .navItem.dropButtonOpened{
     background-color:#E23E57;
