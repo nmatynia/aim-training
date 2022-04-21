@@ -1,3 +1,8 @@
+:root{
+    --standard-radius: calc((50/937)*100vh);
+    --on-open-radius: calc((25/937)*100vh);
+}
+
 .navItem{
     font-family:'Fredoka One';
     font-size: 2.561vh;
@@ -5,19 +10,34 @@
     background-color: #311D3F;
     /* border: none;
     padding:0; */
-    margin:1.334vh 0;
-    margin-right:calc((52/937)*100vh);
+    padding:1.334vh calc((51/2/937)*100vh);
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
 
-.navItem:nth-of-type(4n){
-    margin-right: 0;
+.navItem:nth-of-type(4){
+    padding-right: calc((47.5/937)*100vh);
+    border-radius: 0 var(--standard-radius) var(--standard-radius)  0;
+}
+
+.navItem:nth-of-type(1){
+    padding-left: calc((47.5/937)*100vh);
+    border-radius: var(--standard-radius)  0 0 var(--standard-radius);
 }
 
 .dropButton:hover{
     cursor: pointer;
     color: #cecece;
 }
+
+/* .dropButton.dropButtonOpened{
+    padding: 12px calc(40/937*100vh) 13px calc(40/937*100vh);
+    background-color:#E23E57;
+} */
+
+.navItem.dropButtonOpened{
+    background-color:#E23E57;
+    border-radius: var(--on-open-radius) var(--on-open-radius) 0 0;
+} 

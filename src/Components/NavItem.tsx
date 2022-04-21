@@ -11,8 +11,8 @@ const NavItem:React.FC<IProps> = ({text,children}) =>{
     const [open, setOpen] = useState<boolean>(false);
 
     return(
-        <div className="navItem" >
-            <span className = "dropButton" onClick={() => setOpen(!open)}>
+        <div className={`navItem ${open?" dropButtonOpened":""}`} >
+            <span className = {`dropButton${open?" dropButtonOpened":""}`} onClick={() => setOpen(!open)}>
                 {text} 
             </span>
 

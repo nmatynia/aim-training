@@ -1,46 +1,52 @@
 :root{
     --top-pos: 5.776307vh;
+    --standard-radius: calc((25/937)*100vh);
+    --border-radius: 0 0 var(--standard-radius) var(--standard-radius);
     /* i regret i didn't use scss for this :( */
 }
+
+/* change z-index on active dropdown? */
 .dropdown-modes{
     position:absolute;
     top: var(--top-pos);
     /* 54px for top */
     left:0;
     width:auto;
-    z-index: 3;
+    z-index: 7;
     background-color: #E23E57;
     /* padding: 0 35px; */
+    border-radius: var(--border-radius);
 }
 
 .dropdown-customize{
     position:absolute;
     top: var(--top-pos);
-    left: calc(164/937*100vh);
+    left: calc(158/937*100vh);
     width:auto;
-    z-index: 3;
+    z-index: 7;
     background-color: #E23E57;
+    border-radius: var(--border-radius);
 
 }
 
 .dropdown-difficulty{
     position:absolute;
     top: var(--top-pos);
-    left: calc(345/937*100vh);;
+    left: calc(347/937*100vh);;
     width:auto;
-    z-index: 3;
+    z-index: 7;
     background-color: #E23E57;
-
+    border-radius: var(--border-radius);
 }
 
 .dropdown-about{
     position:absolute;
     top: var(--top-pos);
-    left: calc(500/937*100vh);;
+    left: calc(290/937*100vh);;
     width:auto;
-    z-index: 3;
+    z-index: 7;
     background-color: #E23E57;
-
+    border-radius: var(--border-radius);
 }
 
 .dropdown-modes .menuItem {
@@ -52,11 +58,12 @@
 }
 
 .dropdown-difficulty .menuItem {
-    margin: calc(29/937*100vh) calc(27/937*100vh);
+    margin: calc(29/937*100vh) calc(30.5/937*100vh);
 }
 
 .dropdown-about .menuItem {
-    margin: calc(29/937*100vh) calc(27/937*100vh);
+    width: 350px;
+    margin: calc(29/937*100vh) calc(30/937*100vh);
 }
 
 .menuItem:hover{

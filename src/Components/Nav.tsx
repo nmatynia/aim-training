@@ -31,13 +31,13 @@ const Nav:React.FC = () =>{
             </NavItem>
             <NavItem text="ABOUT">
                 <DropdownMenu name="about"> 
-                    <DropdownItem><span>
-                        If you want to be good <br/>
-                        in FPS games this is <br/>
-                        perfect place for you.<br/>
-                        Enjoy<br/>
+                    <DropdownItem>
+                        If you want to be good
+                        in FPS games this is the perfect place for you
+                        Happy aiming!
+                    </DropdownItem>
+                    <DropdownItem>
                         Made by Norbert Matynia
-                        </span>
                     </DropdownItem>
                 </DropdownMenu>
             </NavItem>
