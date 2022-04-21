@@ -26,7 +26,7 @@ const App: React.FC = () =>{
   return (
     <div className="App">
         <h1 className ="appHeader">Aim Training</h1>
-        <Nav setTime={setTime} setMapSize={setMapSize} setTargetSize={setTargetSize} time={time} mapSize={mapSize} targetSize={targetSize}/>
+        <Nav setTime={setTime} setMapSize={setMapSize} setTargetSize={setTargetSize} time={time} mapSize={mapSize} targetSize={targetSize} setGameStatus={setGameStatus}/>
         <GameArea 
           setScore={setScore} 
           score={score} 

@@ -10,18 +10,19 @@ interface IProps{
     setTime:React.Dispatch<React.SetStateAction<number>>;
     setMapSize: React.Dispatch<React.SetStateAction<number>>;
     setTargetSize:React.Dispatch<React.SetStateAction<number>>;
+    setGameStatus:React.Dispatch<React.SetStateAction<boolean>>;
 }
-const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,targetSize}) =>{
+const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,targetSize,setGameStatus}) =>{
     return(
         <div className="Nav">
-            <NavItem text="MODES">
+            <NavItem text="MODES" setGameStatus={setGameStatus}>
                 <DropdownMenu name="modes"> 
                     <DropdownItem>CLASSIC</DropdownItem>
                     <DropdownItem>FRENZY</DropdownItem> 
                 </DropdownMenu>
             </NavItem>
 
-            <NavItem text="CUSTOMIZE">
+            <NavItem text="CUSTOMIZE" setGameStatus={setGameStatus}>
                 <DropdownMenu name="customize"> 
                     <DropdownItem>MAP SIZE: <Slider min={32} max={67} val={mapSize} set={setMapSize}/></DropdownItem>
                     <DropdownItem>TARGET SIZE: <Slider min={1} max={12} val={targetSize} set={setTargetSize}/></DropdownItem> 
@@ -29,14 +30,14 @@ const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,tar
                     <DropdownItem>CIRCLE / SQUARE</DropdownItem>
                 </DropdownMenu>
             </NavItem>
-            <NavItem text="DIFFICULTY">
+            <NavItem text="DIFFICULTY" setGameStatus={setGameStatus}>
                 <DropdownMenu name="difficulty"> 
                     <DropdownItem>EASY</DropdownItem>
                     <DropdownItem>NORMAL</DropdownItem> 
                     <DropdownItem>HARDCORE</DropdownItem> 
                 </DropdownMenu>
             </NavItem>
-            <NavItem text="ABOUT">
+            <NavItem text="ABOUT" setGameStatus={setGameStatus}>
                 <DropdownMenu name="about"> 
                     <DropdownItem>
                         If you want to be good
