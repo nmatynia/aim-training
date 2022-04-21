@@ -2,8 +2,16 @@ import React from "react";
 import '../Styles/Nav.css'
 import NavItem from "./NavItem";
 import DropdownMenu,{DropdownItem} from "./DropdownMenu";
-
-const Nav:React.FC = () =>{
+import Slider from "./Slider";
+interface IProps{
+    time:number;
+    mapSize:number;
+    targetSize:number;
+    setTime:React.Dispatch<React.SetStateAction<number>>;
+    setMapSize: React.Dispatch<React.SetStateAction<number>>;
+    setTargetSize:React.Dispatch<React.SetStateAction<number>>;
+}
+const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,targetSize}) =>{
     return(
         <div className="Nav">
             <NavItem text="MODES">
@@ -15,10 +23,9 @@ const Nav:React.FC = () =>{
 
             <NavItem text="CUSTOMIZE">
                 <DropdownMenu name="customize"> 
-                    <DropdownItem>MAP SIZE: -----o-----</DropdownItem>
-                    <DropdownItem>TARGET SIZE: -----o-----</DropdownItem> 
-                    <DropdownItem>GAME TIME: -----o-----</DropdownItem>
-                    <DropdownItem>GAME TIME: -----o-----</DropdownItem>
+                    <DropdownItem>MAP SIZE: <Slider min={32} max={67} val={mapSize} set={setMapSize}/></DropdownItem>
+                    <DropdownItem>TARGET SIZE: <Slider min={1} max={12} val={targetSize} set={setTargetSize}/></DropdownItem> 
+                    <DropdownItem>GAME TIME:<Slider min={10} max={300} val={time} set={setTime} step={10}/> </DropdownItem>
                     <DropdownItem>CIRCLE / SQUARE</DropdownItem>
                 </DropdownMenu>
             </NavItem>
