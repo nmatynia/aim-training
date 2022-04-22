@@ -12,6 +12,22 @@ interface IState{
   gameStatus: boolean;
 }
 
+const useEventListener = (eventName:any, handler:any, element = window) => {
+  const savedHandler = useRef<any>();
+
+  useEffect(() => {
+    savedHandler.current = handler;
+  }, [handler]);
+
+  useEffect(() => {
+    const eventListener = (event:React.KeyboardEvent<HTMLDivElement>) => savedHandler.current(event);
+    element.addEventListener(eventName, eventListener);
+    return () => {
+      element.removeEventListener(eventName, eventListener);
+    };
+  }, [eventName, element]);
+};
+
 const App: React.FC = () =>{
 
   const [score,setScore] = useState<IState["score"]>(0);
@@ -22,6 +38,10 @@ const App: React.FC = () =>{
   const [gameStatus, setGameStatus] = useState<IState["gameStarting"]>(false) // responsible for true start button (centered target) display 
 
   console.log("Score: ",score)
+  useEventListener("keydown",(event:any)=>{
+    if (event.altKey && event.key === 'b') {
+      setGameStatus(false)};
+  })
 
   return (
     <div className="App">
