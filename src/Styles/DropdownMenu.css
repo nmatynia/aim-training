@@ -1,5 +1,5 @@
 :root{
-    --top-pos: 5.776307vh;
+    --top-pos: 5.71307vh;
     --standard-radius: calc((25/937)*100vh);
     --border-radius: 0 0 var(--standard-radius) var(--standard-radius);
     /* i regret i didn't use scss for this :( */
@@ -8,14 +8,14 @@
 /* change z-index on active dropdown? */
 .dropdown-modes{
     position:absolute;
-    top: 0;
+    top: var(--top-pos);;
     /* 54px for top */
     left:-1px;
     width:auto;
     z-index: 7;
     background-color: #E23E57;
+    border-radius: var(--border-radius);
     /* padding: 0 35px; */
-    border-radius: var(--standard-radius);
     animation-duration: 0.4s;
     animation-name: ondropdown;
 }
@@ -34,19 +34,19 @@
 
 .dropdown-difficulty{
     position:absolute;
-    top: 0;
-    left: calc(347/937*100vh);;
+    top: var(--top-pos);
+    left: calc(347/937*100vh);
     width:auto;
     z-index: 7;
     background-color: #E23E57;
-    border-radius: var(--standard-radius);
+    border-radius: var(--border-radius);
     animation-duration: 0.4s;
     animation-name: ondropdown;
 }
 
 .dropdown-about{
     position:absolute;
-    top: 0;
+    top: var(--top-pos);;
     left: calc(287/937*100vh);;
     width:auto;
     z-index: 7;
@@ -65,7 +65,7 @@
 }
 
 .dropdown-difficulty .menuItem {
-    margin: calc(29/937*100vh) calc(25.715/937*100vh);
+    margin: calc(29/937*100vh) calc(30.06/937*100vh);
 }
 
 .dropdown-about .menuItem {
@@ -101,11 +101,11 @@
 
 @keyframes ondropdown {
     from {
-      opacity: 9%;
+      opacity: 0%;
     }
   
     to {
       opacity: 100%;
     }
-  }
+}
 
