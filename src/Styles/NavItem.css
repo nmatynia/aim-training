@@ -33,19 +33,23 @@
     transition: color 0.2s linear 0.1s;
 }
 
-.navItem.dropButtonOpened{
-    background-color:#E23E57;
-    border-radius: var(--on-open-radius) var(--on-open-radius) 0 0;
-    animation-duration: 0.4s;
-    animation-name: ondropbutton;
-} 
+.holder{
+    position: absolute;
+    /* calc(-1.334 * 2vh - 2.561vh) */
+    top:calc((-54/937)*100vh);
+    left: 0;
+    color:white;
+    border-radius: var(--standard-radius) var(--standard-radius) 0 0;
+    background: #E23E57;
+    padding:1.415vh calc((51/2/937)*100vh);
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
 
-@keyframes ondropbutton {
-    from {
-        background-color: #311D3F;
-    }
-  
-    to {
-        background-color: #E23E57;
-    }
-  }
+.holder:hover{
+    cursor: pointer;
+    color: #bbabc4;
+    transition: color 0.2s linear 0.1s;
+}

@@ -8,14 +8,16 @@
 /* change z-index on active dropdown? */
 .dropdown-modes{
     position:absolute;
-    top: var(--top-pos);
+    top: 0;
     /* 54px for top */
     left:-1px;
     width:auto;
     z-index: 7;
     background-color: #E23E57;
     /* padding: 0 35px; */
-    border-radius: var(--border-radius);
+    border-radius: var(--standard-radius);
+    animation-duration: 0.4s;
+    animation-name: ondropdown;
 }
 
 .dropdown-customize{
@@ -32,19 +34,19 @@
 
 .dropdown-difficulty{
     position:absolute;
-    top: var(--top-pos);
+    top: 0;
     left: calc(347/937*100vh);;
     width:auto;
     z-index: 7;
     background-color: #E23E57;
-    border-radius: var(--border-radius);
+    border-radius: var(--standard-radius);
     animation-duration: 0.4s;
     animation-name: ondropdown;
 }
 
 .dropdown-about{
     position:absolute;
-    top: var(--top-pos);
+    top: 0;
     left: calc(287/937*100vh);;
     width:auto;
     z-index: 7;
@@ -55,7 +57,7 @@
 }
 
 .dropdown-modes .menuItem {
-    margin: calc(29/937*100vh) calc(33/937*100vh);
+    margin: calc(29/937*100vh) calc(40/937*100vh);
 }
 
 .dropdown-customize .menuItem {
@@ -63,7 +65,7 @@
 }
 
 .dropdown-difficulty .menuItem {
-    margin: calc(29/937*100vh) calc(30.5/937*100vh);
+    margin: calc(29/937*100vh) calc(25.715/937*100vh);
 }
 
 .dropdown-about .menuItem {
@@ -91,6 +93,11 @@
     display: flex;
     align-items: center;
 }
+
+.dropdown .menuItem:nth-of-type(1){
+    margin-top: 1.334vh;
+}
+
 
 @keyframes ondropdown {
     from {

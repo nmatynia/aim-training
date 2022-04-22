@@ -29,7 +29,7 @@ const NavItem:React.FC<IProps> = ({text,children,setGameStatus}) =>{
             <span className = {`dropButton${open?" dropButtonOpened":""}`} onClick={() => setOpen(!open)}>
                 {text} 
             </span>
-
+            
             {open && children}
         </div>
     )

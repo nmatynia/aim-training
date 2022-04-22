@@ -8,7 +8,7 @@ interface IProps{
 
 const DropdownMenu:React.FC<IProps> = ({children,name}) =>{ 
     return (
-        <div className={`dropdown-${name}`}>
+        <div className={`dropdown dropdown-${name}`}>
             {children}
         </div>
     )
