@@ -24,7 +24,7 @@ const Timer:React.FC<IProps> =({time,setScore,setGameStatus}) =>{
         }
       }, [counter]);
       
-      const formattedCounter:string  = counter > 59 ? `${Math.floor(counter/60)}:${counter%60 !== 0 ? counter%60: "00"}`  : (counter >= 10 ? `0:${counter}` : `0:0${counter}`);
+      const formattedCounter:string  = counter > 59 ? `${Math.floor(counter/60)}:${counter%60 >= 10 ? counter%60: `0${counter%60}`}`  : (counter >= 10 ? `0:${counter}` : `0:0${counter}`);
 
     return(
         <div className='timer'>

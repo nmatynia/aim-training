@@ -62,7 +62,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
 
     
             
-    const formattedTime:string = time > 59 ? `${Math.floor(time/60)}:${time%60 !== 0 ? time%60: "00"}`  : (time >= 10 ? `0:${time}` : `0:0${time}`);
+    const formattedTime:string = time > 59 ? `${Math.floor(time/60)}:${time%60 >=10 ? (time%60): `0${time%60}`}`  : (time >= 10 ? `0:${time}` : `0:0${time}`);
 
     const calculatedAccuracy = Math.round(score/(score+missedClicks.current)*100*100)/100;
 
