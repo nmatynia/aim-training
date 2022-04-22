@@ -27,7 +27,6 @@ const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,tar
                     <DropdownItem>MAP SIZE: <Slider min={32} max={67} val={mapSize} set={setMapSize}/></DropdownItem>
                     <DropdownItem>TARGET SIZE: <Slider min={1} max={12} val={targetSize} set={setTargetSize}/></DropdownItem> 
                     <DropdownItem>GAME TIME:<Slider min={10} max={300} val={time} set={setTime} step={10}/> </DropdownItem>
-                    <DropdownItem>CIRCLE / SQUARE</DropdownItem>
                 </DropdownMenu>
             </NavItem>
             <NavItem text="DIFFICULTY" setGameStatus={setGameStatus}>
