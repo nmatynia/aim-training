@@ -25,11 +25,14 @@ const NavItem:React.FC<IProps> = ({text,children,setGameStatus}) =>{
     })
 
     return(
-        <div ref={dropDownRef} className={`navItem ${open?" dropButtonOpened":""}`} onClick={()=>setGameStatus(false)}>
-            <span className = {`dropButton${open?" dropButtonOpened":""}`} onClick={() => setOpen(!open)}>
+        <div ref={dropDownRef} className={`navItem`} onClick={()=>setGameStatus(false)}>
+            
+            <span className = 'dropButton' onClick={() => setOpen(!open)}>
                 {text} 
             </span>
-            
+                
+                
+            {open && <div className={`dropButtonOpened ${text.toLowerCase()}`} onClick={() => setOpen(!open)}>{text}</div>}
             {open && children}
         </div>
     )

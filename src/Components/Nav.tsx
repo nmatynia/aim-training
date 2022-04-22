@@ -16,15 +16,13 @@ const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,tar
     return(
         <div className="Nav">
             <NavItem text="MODES" setGameStatus={setGameStatus}>
-                <DropdownMenu name="modes"> 
-                    <DropdownItem>MODES</DropdownItem>
+                <DropdownMenu name="modes">
                     <DropdownItem>CLASSIC</DropdownItem>
                     <DropdownItem>FRENZY</DropdownItem> 
                 </DropdownMenu>
             </NavItem>
 
             <NavItem text="CUSTOMIZE" setGameStatus={setGameStatus}>
-                <div className="holder">CUSTOMIZE</div>
                 <DropdownMenu name="customize">
                     <DropdownItem>MAP SIZE: <Slider min={32} max={67} val={mapSize} set={setMapSize}/></DropdownItem>
                     <DropdownItem>TARGET SIZE: <Slider min={1} max={12} val={targetSize} set={setTargetSize}/></DropdownItem> 
@@ -32,16 +30,14 @@ const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,tar
                 </DropdownMenu>
             </NavItem>
             <NavItem text="DIFFICULTY" setGameStatus={setGameStatus}>
-                <DropdownMenu name="difficulty"> 
-                    <DropdownItem>DIFFICULTY</DropdownItem>
+                <DropdownMenu name="difficulty">
                     <DropdownItem>EASY</DropdownItem>
                     <DropdownItem>NORMAL</DropdownItem> 
                     <DropdownItem>HARDCORE</DropdownItem> 
                 </DropdownMenu>
             </NavItem>
             <NavItem text="ABOUT" setGameStatus={setGameStatus}>
-                <DropdownMenu name="about"> 
-                    <DropdownItem>ABOUT</DropdownItem>
+                <DropdownMenu name="about">
                     <DropdownItem>
                         If you want to be good
                         in FPS games this is the perfect place for you
