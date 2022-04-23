@@ -31,7 +31,7 @@ const useEventListener = (eventName:any, handler:any, element = window) => {
 const App: React.FC = () =>{
 
   const [score,setScore] = useState<IState["score"]>(0);
-  const [time,setTime] = useState<IState["time"]>(5); // initial value 30
+  const [time,setTime] = useState<IState["time"]>(30); // initial value 30
   const [targetSize,setTargetSize] = useState<IState["targetSize"]>(5.336);// true initial value 5.336vh
   const [mapSize,setMapSize] = useState<IState["mapSize"]>(50);// true initial value 64vh
   const [gameStarting, setGameStarting] = useState<IState["gameStarting"]>(true) // responsible for startMenu display 
