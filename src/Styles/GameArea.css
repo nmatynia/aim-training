@@ -7,6 +7,11 @@
     margin: 0 auto;
     border: 1.06vh #311D3F solid;
     border-radius: 3.73vh;
+    cursor:crosshair;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
   }
   
   .target{
@@ -62,10 +67,6 @@
     bottom: calc(64/937*100vh);
     font-size: calc(24/937*100vh);
     color: rgba(49, 29, 63, 0.13);
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
   }
 
   .score{
@@ -74,10 +75,6 @@
     bottom: 2.347vh;
     font-size: calc(36/937*100vh);
     color: rgba(49, 29, 63, 0.13);
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
   }
 
   .timer{
@@ -86,8 +83,4 @@
     bottom: 2.347vh;
     font-size: calc(36/937*100vh);
     color: rgba(49, 29, 63, 0.13);
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
   }
