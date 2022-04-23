@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import '../Styles/GameArea.css'
+import {Howl} from 'howler';
+
 interface IProps{
     time: number;
     setScore:React.Dispatch<React.SetStateAction<number>>;
@@ -7,12 +9,16 @@ interface IProps{
 }
 const Timer:React.FC<IProps> =({time,setScore,setGameStatus}) =>{
     const [counter,setCounter] = useState<IProps["time"]>(time);
-    
+    const endGameSound = new Howl({
+      src: [require("../Sounds/end.wav")],
+      volume:0.02
+  })
     useEffect(() => {
         const myInterval = () => {
           if (counter >= 1) {
             setCounter(state => state - 1)
           } else if (counter < 1){
+            endGameSound.play()
             setCounter(time);
             setGameStatus(false);
             clearInterval(interval);
