@@ -18,19 +18,25 @@ interface IProps{
 const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus}) =>{
 
     const missedClicks = useRef(0);
-    const sound = new Howl({
+    const hitTargetSound = new Howl({
         src: [require("../Sounds/hittarget.wav")],
         volume: 0.2
     })
+
+    const startGameSound = new Howl({
+        src: [require("../Sounds/start.ogg")],
+        volume: 0.2
+    })
+
     const randomizePosition = ():number =>{
-        const maxPosition = mapSize - targetSize + 1;
+        const maxPosition = mapSize - targetSize;
         const number = Math.floor(Math.random() * maxPosition);
         return number;
     }
 
     const handleClick = () =>{
         return () => {
-            sound.play()
+            hitTargetSound.play()
             setScore(prevState => prevState + 1)
         }
     }
@@ -57,7 +63,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
         <div 
             className="target" 
             onClick ={() => {
-                sound.play();
+                startGameSound.play();
                 setGameStatus(true); 
                 setScore(1);
                 missedClicks.current = 0;
