@@ -1,8 +1,8 @@
-import React,{useState, useRef} from "react";
+import React,{useRef} from "react";
 import "../Styles/GameArea.css";
-import Timer from './Timer'
-import {FaSyncAlt} from 'react-icons/fa'
-
+import Timer from './Timer';
+import {FaSyncAlt} from 'react-icons/fa';
+import {Howl, Howler} from 'howler';
 interface IProps{
     score:number
     targetSize:number
@@ -18,8 +18,10 @@ interface IProps{
 const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus}) =>{
 
     const missedClicks = useRef(0);
-    const [sessionBest, setSessionBest] = useState<number>(0);
-
+    const sound = new Howl({
+        src: [require("../Sounds/hittarget.wav")],
+        volume: 0.2
+    })
     const randomizePosition = ():number =>{
         const maxPosition = mapSize - targetSize + 1;
         const number = Math.floor(Math.random() * maxPosition);
@@ -27,7 +29,10 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
     }
 
     const handleClick = () =>{
-        return () => setScore(prevState => prevState + 1)
+        return () => {
+            sound.play()
+            setScore(prevState => prevState + 1)
+        }
     }
 
     const gameStart: JSX.Element = (
@@ -52,8 +57,9 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
         <div 
             className="target" 
             onClick ={() => {
+                sound.play();
                 setGameStatus(true); 
-                setScore(0);
+                setScore(1);
                 missedClicks.current = 0;
             }}
             style={{left:`${(mapSize-targetSize)/2}vh`, top:`${(mapSize-targetSize)/2}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
