@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+## About The Project
+Aim Training is a project that allows users to train their muscle memory responsible for aiming. The app has few customization features, user can change size of the map and target, as well as change the time of game. Moreover, there are two gamemodes: classic and frenzy. The second one has three difficulty levels.
+Again, I tested my strengths in React + TypeScript combination and learn a lot from it along developing this project.
+\
+\
+When I was starting my front-end journey one year ago, the first thing I knew I wanted to do is... Aim Training website! I love first First-Person Shooters and I always thought having my own training app is a cool idea. Only recently I felt like I have enough skill to make it perfect and it is time to finally bulid it. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+\
+gif - soon
 
-## Available Scripts
 
-In the project directory, you can run:
+### Built With
 
-### `npm start`
+* [React.js](https://reactjs.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Figma](https://www.figma.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Screenshots
+soon
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+<!-- CONTACT -->
+## Contact
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Norbert Matynia - [LinkedIn](https://www.linkedin.com/in/norbert-matynia/) - norbert.matyniaa@gmail.com
 
-### `npm run build`
+Project Link: nmatynia.github.io/aim-training/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
