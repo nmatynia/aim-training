@@ -1,5 +1,4 @@
 import React,{useEffect, useRef, useState} from 'react';
-import { isPropertySignature } from 'typescript';
 import '../Styles/NavItem.css'
 
 interface IProps{
