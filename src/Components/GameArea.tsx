@@ -4,6 +4,8 @@ import Timer from './Timer';
 import {FaSyncAlt} from 'react-icons/fa';
 import {Howl, Howler} from 'howler';
 import Target from "./Target";
+import FrenzyTargets from "./FrenzyTargets";
+
 interface IProps{
     score:number
     targetSize:number
@@ -79,15 +81,11 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
     const formattedTime:string = time > 59 ? `${Math.floor(time/60)}:${time%60 >=10 ? (time%60): `0${time%60}`}`  : (time >= 10 ? `0:${time}` : `0:0${time}`);
 
     const calculatedAccuracy = Math.round(score/(score+missedClicks.current)*100*100)/100;
-
-    //if something doesnt work its because of this
     
-    
-
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}> 
 
-            {gameStarting ? gameStart : (gameStatus ? ( gameMode==="classic" ? <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>:null) : startingTarget)}
+            {gameStarting ? gameStart : (gameStatus ? ( gameMode==="classic" ? <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>:<FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus}/>) : startingTarget)}
 
             <div className="accuracyCounter" onClick={()=>missedClicks.current = missedClicks.current + 1}></div>
             
