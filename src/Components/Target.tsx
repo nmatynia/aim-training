@@ -8,9 +8,7 @@ interface IProps{
 }
 
 const Target:React.FC<IProps> = ({setScore,mapSize,targetSize}) =>{
-    const [posX,setPosX] = useState<number>();
-    const [posY,setPosY] = useState<number>();
-
+    
     const hitTargetSound = new Howl({
         src: [require("../Sounds/hittarget.wav")],
         volume: 0.2
@@ -21,6 +19,9 @@ const Target:React.FC<IProps> = ({setScore,mapSize,targetSize}) =>{
         const number = Math.floor(Math.random() * maxPosition);
         return number;
     }
+
+    const [posX,setPosX] = useState<number>(randomizePosition);
+    const [posY,setPosY] = useState<number>(randomizePosition);
 
     const handleClick = () =>{
         return () => {
