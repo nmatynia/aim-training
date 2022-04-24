@@ -109,3 +109,11 @@
     }
 }
 
+#gamemodeSelected{
+    color: #311D3F;
+    transition: color 0.2s linear 0.1s;
+}
+#diffSelected{
+    color: #311D3F;
+    transition: color 0.2s linear 0.1s;
+}

@@ -7,10 +7,11 @@ interface IProps{
     gameStatus:boolean;
     setGameStatus:React.Dispatch<React.SetStateAction<boolean>>;
     setScore:React.Dispatch<React.SetStateAction<number>>;
+    frenzyDiff:string;
 }
 
 
-const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,setGameStatus}) =>{
+const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,setGameStatus,frenzyDiff}) =>{
 
     const [frenzyTargets, setFrenzyTargets] = useState<boolean []>([])
     const [counter,setCounter] = useState<number>(0);
@@ -20,6 +21,17 @@ const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,
         volume:0.1
     })
 
+    const difficultyTime = ():number|undefined =>{
+        if(frenzyDiff === "easy"){
+            return 500;
+        }
+        else if(frenzyDiff === "normal"){
+            return 400;
+        }
+        else if(frenzyDiff ==="hardcore"){
+            return 300;
+        }
+    }
     useEffect(() => {
         const myInterval = () => {
             if(frenzyCounter<5){
@@ -36,7 +48,8 @@ const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,
                 clearInterval(interval);
             }
         }
-        const interval = setInterval(myInterval, 500);
+        const interval = setInterval(myInterval, difficultyTime());
+
         return () => {
           clearInterval(interval)
         }

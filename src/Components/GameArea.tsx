@@ -20,33 +20,19 @@ interface IProps{
     gameStatus: boolean
     setGameStatus: React.Dispatch<React.SetStateAction<boolean>>
     gameMode: string;
+    setFrenzyDiff: React.Dispatch<React.SetStateAction<string>>;
+    frenzyDiff:string;
 }
 
-const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus,gameMode}) =>{
+const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus,gameMode,frenzyDiff}) =>{
 
     const missedClicks = useRef(0);
-    // const hitTargetSound = new Howl({
-    //     src: [require("../Sounds/hittarget.wav")],
-    //     volume: 0.2
-    // })
 
     const startGameSound = new Howl({
         src: [require("../Sounds/start.ogg")],
         volume: 0.2
     })
 
-    const randomizePosition = ():number =>{
-        const maxPosition = mapSize - targetSize;
-        const number = Math.floor(Math.random() * maxPosition);
-        return number;
-    }
-
-    // const handleClick = () =>{
-    //     return () => {
-    //         hitTargetSound.play()
-    //         setScore(prevState => prevState + 1)
-    //     }
-    // }
 
     const gameStart: JSX.Element = (
     <div 
@@ -57,14 +43,6 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             <div className ='tip'><FaSyncAlt/>click alt + b for restart</div>
     </div>
     )
-    
-    // const target: JSX.Element = (
-    //     <div 
-    //         className="target" 
-    //         onClick ={handleClick()}
-    //         style={{left:`${randomizePosition()}vh`, top:`${randomizePosition()}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
-    //     </div>
-    // )
 
     const startingTarget: JSX.Element = (
         <div 
@@ -90,7 +68,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             return <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>
         }
         else if(gameMode === "frenzy"){
-            return <FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus} setGameStatus={setGameStatus}/>
+            return <FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus} setGameStatus={setGameStatus} frenzyDiff={frenzyDiff}/>
         }
         else if(gameMode === "trio"){
             return <Trio setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus}/>
