@@ -14,9 +14,10 @@ interface IProps{
     setGameStarting: React.Dispatch<React.SetStateAction<boolean>>
     gameStatus: boolean
     setGameStatus: React.Dispatch<React.SetStateAction<boolean>>
+    gameMode: string;
 }
 
-const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus}) =>{
+const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus,gameMode}) =>{
 
     const missedClicks = useRef(0);
     // const hitTargetSound = new Howl({
@@ -86,7 +87,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}> 
 
-            {gameStarting ? gameStart : (gameStatus ? <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/> : startingTarget)}
+            {gameStarting ? gameStart : (gameStatus ? ( gameMode==="classic" ? <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>:null) : startingTarget)}
 
             <div className="accuracyCounter" onClick={()=>missedClicks.current = missedClicks.current + 1}></div>
             

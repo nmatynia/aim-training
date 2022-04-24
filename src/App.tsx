@@ -10,6 +10,7 @@ interface IState{
   mapSize: number;
   gameStarting: boolean;
   gameStatus: boolean;
+  gameMode: string;
 }
 
 const useEventListener = (eventName:any, handler:any, element = window) => {
@@ -36,6 +37,7 @@ const App: React.FC = () =>{
   const [mapSize,setMapSize] = useState<IState["mapSize"]>(50);// true initial value 64vh
   const [gameStarting, setGameStarting] = useState<IState["gameStarting"]>(true) // responsible for startMenu display 
   const [gameStatus, setGameStatus] = useState<IState["gameStarting"]>(false) // responsible for true start button (centered target) display 
+  const [gameMode,setGameMode] = useState<IState["gameMode"]>("classic")
 
   console.log("Score: ",score)
   useEventListener("keydown",(event:any)=>{
@@ -46,7 +48,7 @@ const App: React.FC = () =>{
   return (
     <div className="App">
         <h1 className ="appHeader">Aim Training</h1>
-        <Nav setTime={setTime} setMapSize={setMapSize} setTargetSize={setTargetSize} time={time} mapSize={mapSize} targetSize={targetSize} setGameStatus={setGameStatus}/>
+        <Nav setTime={setTime} setMapSize={setMapSize} setTargetSize={setTargetSize} time={time} mapSize={mapSize} targetSize={targetSize} setGameStatus={setGameStatus} setGameMode={setGameMode}/>
         <GameArea 
           setScore={setScore} 
           score={score} 
@@ -57,6 +59,7 @@ const App: React.FC = () =>{
           setGameStarting={setGameStarting}
           gameStatus = {gameStatus}
           setGameStatus = {setGameStatus}
+          gameMode={gameMode}
         />
         <footer className="footer">Norbert Matynia - <a className='github-link' href="https://github.com/nmatynia">github.com/nmatynia</a></footer>
     </div>

@@ -11,14 +11,15 @@ interface IProps{
     setMapSize: React.Dispatch<React.SetStateAction<number>>;
     setTargetSize:React.Dispatch<React.SetStateAction<number>>;
     setGameStatus:React.Dispatch<React.SetStateAction<boolean>>;
+    setGameMode: React.Dispatch<React.SetStateAction<string>>;
 }
-const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,targetSize,setGameStatus}) =>{
+const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,targetSize,setGameStatus,setGameMode}) =>{
     return(
         <div className="Nav">
             <NavItem text="MODES" setGameStatus={setGameStatus}>
                 <DropdownMenu name="modes">
-                    <DropdownItem>CLASSIC</DropdownItem>
-                    <DropdownItem>FRENZY</DropdownItem> 
+                    <DropdownItem><span onClick={() => setGameMode("classic")}>CLASSIC</span></DropdownItem>
+                    <DropdownItem><span onClick={() => setGameMode("frenzy")}>FRENZY</span></DropdownItem> 
                 </DropdownMenu>
             </NavItem>
 
