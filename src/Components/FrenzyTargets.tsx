@@ -57,9 +57,9 @@ const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,
 
     return (
         <div>
-            {frenzyTargets.map((target,idx) =>{
+            {frenzyTargets.map((target,idx=0) =>{
                 return (
-                   <FrenzyTarget setScore = {setScore} mapSize ={mapSize} targetSize ={targetSize} setFrenzyTargets={setFrenzyTargets} frenzyTargets={frenzyTargets} setFrenzyCounter={setFrenzyCounter}/>
+                   <FrenzyTarget setScore = {setScore} mapSize ={mapSize} targetSize ={targetSize} setFrenzyTargets={setFrenzyTargets} frenzyTargets={frenzyTargets} setFrenzyCounter={setFrenzyCounter} idx={idx}/>
                 )
             })}
         </div>

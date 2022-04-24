@@ -1,16 +1,17 @@
 import React, { useRef, useState } from 'react';
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 
 interface IProps{
     mapSize:number;
     targetSize:number;
     frenzyTargets: boolean[];
+    idx:number
     setFrenzyCounter:React.Dispatch<React.SetStateAction<number>>
     setFrenzyTargets:React.Dispatch<React.SetStateAction<boolean[]>>
     setScore:React.Dispatch<React.SetStateAction<number>>;
 }
 
-const FrenzyTarget:React.FC<IProps> = ({setScore,mapSize,targetSize,setFrenzyTargets,frenzyTargets,setFrenzyCounter}) =>{
+const FrenzyTarget:React.FC<IProps> = ({setScore,mapSize,targetSize,setFrenzyTargets,frenzyTargets,setFrenzyCounter,idx}) =>{
     
     const hitTargetSound = new Howl({
         src: [require("../Sounds/hittarget.wav")],
@@ -33,6 +34,13 @@ const FrenzyTarget:React.FC<IProps> = ({setScore,mapSize,targetSize,setFrenzyTar
             setScore(prevState => prevState + 1);
             frenzyTargetRef.current.remove();
             setFrenzyCounter(prev => prev - 1)
+            // setFrenzyTargets(
+            //     [
+            //         ...frenzyTargets.slice(0,idx),
+            //         ...frenzyTargets.slice(idx+1)
+            //     ]
+            //     )
+
         }
     }
 
