@@ -3,6 +3,7 @@ import "../Styles/GameArea.css";
 import Timer from './Timer';
 import {FaSyncAlt} from 'react-icons/fa';
 import {Howl, Howler} from 'howler';
+import Target from "./Target";
 interface IProps{
     score:number
     targetSize:number
@@ -18,10 +19,10 @@ interface IProps{
 const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus}) =>{
 
     const missedClicks = useRef(0);
-    const hitTargetSound = new Howl({
-        src: [require("../Sounds/hittarget.wav")],
-        volume: 0.2
-    })
+    // const hitTargetSound = new Howl({
+    //     src: [require("../Sounds/hittarget.wav")],
+    //     volume: 0.2
+    // })
 
     const startGameSound = new Howl({
         src: [require("../Sounds/start.ogg")],
@@ -34,12 +35,12 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
         return number;
     }
 
-    const handleClick = () =>{
-        return () => {
-            hitTargetSound.play()
-            setScore(prevState => prevState + 1)
-        }
-    }
+    // const handleClick = () =>{
+    //     return () => {
+    //         hitTargetSound.play()
+    //         setScore(prevState => prevState + 1)
+    //     }
+    // }
 
     const gameStart: JSX.Element = (
     <div 
@@ -51,13 +52,13 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
     </div>
     )
     
-    const target: JSX.Element = (
-        <div 
-            className="target" 
-            onClick ={handleClick()}
-            style={{left:`${randomizePosition()}vh`, top:`${randomizePosition()}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
-        </div>
-    )
+    // const target: JSX.Element = (
+    //     <div 
+    //         className="target" 
+    //         onClick ={handleClick()}
+    //         style={{left:`${randomizePosition()}vh`, top:`${randomizePosition()}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
+    //     </div>
+    // )
 
     const startingTarget: JSX.Element = (
         <div 
@@ -85,7 +86,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}> 
 
-            {gameStarting ? gameStart : (gameStatus ? target : startingTarget)}
+            {gameStarting ? gameStart : (gameStatus ? <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/> : startingTarget)}
 
             <div className="accuracyCounter" onClick={()=>missedClicks.current = missedClicks.current + 1}></div>
             
