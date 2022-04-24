@@ -2,9 +2,12 @@ import React,{useRef} from "react";
 import "../Styles/GameArea.css";
 import Timer from './Timer';
 import {FaSyncAlt} from 'react-icons/fa';
-import {Howl, Howler} from 'howler';
+//Sound
+import {Howl} from 'howler';
+//Gamemodes
 import Target from "./Target";
 import FrenzyTargets from "./FrenzyTargets";
+import Trio from "./Trio";
 
 interface IProps{
     score:number
@@ -82,10 +85,22 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
 
     const calculatedAccuracy = Math.round(score/(score+missedClicks.current)*100*100)/100;
     
+    const modeDisplay = () => {
+        if(gameMode === "classic"){
+            return <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>
+        }
+        else if(gameMode === "frenzy"){
+            return <FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus} setGameStatus={setGameStatus}/>
+        }
+        else if(gameMode === "trio"){
+            return <Trio setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus}/>
+        }
+    }
+    
     return (
         <div className="GameArea" style={{width:`${mapSize}vh`, height:`${mapSize}vh`}}> 
 
-            {gameStarting ? gameStart : (gameStatus ? ( gameMode==="classic" ? <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>:<FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus}/>) : startingTarget)}
+            {gameStarting ? gameStart : (gameStatus ? modeDisplay() : startingTarget)}
 
             <div className="accuracyCounter" onClick={()=>missedClicks.current = missedClicks.current + 1}></div>
             

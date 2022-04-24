@@ -19,7 +19,8 @@ const Nav:React.FC<IProps> = ({setTime,setMapSize,setTargetSize,time,mapSize,tar
             <NavItem text="MODES" setGameStatus={setGameStatus}>
                 <DropdownMenu name="modes">
                     <DropdownItem><span onClick={() => setGameMode("classic")}>CLASSIC</span></DropdownItem>
-                    <DropdownItem><span onClick={() => setGameMode("frenzy")}>FRENZY</span></DropdownItem> 
+                    <DropdownItem><span onClick={() => setGameMode("frenzy")}>FRENZY</span></DropdownItem>
+                    <DropdownItem><span onClick={() => setGameMode("trio")}>TRIO</span></DropdownItem>
                 </DropdownMenu>
             </NavItem>
 
