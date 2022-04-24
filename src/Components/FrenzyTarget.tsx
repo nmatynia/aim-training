@@ -5,12 +5,12 @@ interface IProps{
     mapSize:number;
     targetSize:number;
     frenzyTargets: boolean[];
-    setTargetsCounter:React.Dispatch<React.SetStateAction<number>>
+    setFrenzyCounter:React.Dispatch<React.SetStateAction<number>>
     setFrenzyTargets:React.Dispatch<React.SetStateAction<boolean[]>>
     setScore:React.Dispatch<React.SetStateAction<number>>;
 }
 
-const FrenzyTarget:React.FC<IProps> = ({setScore,mapSize,targetSize,setFrenzyTargets,frenzyTargets,setTargetsCounter}) =>{
+const FrenzyTarget:React.FC<IProps> = ({setScore,mapSize,targetSize,setFrenzyTargets,frenzyTargets,setFrenzyCounter}) =>{
     
     const hitTargetSound = new Howl({
         src: [require("../Sounds/hittarget.wav")],
@@ -31,8 +31,8 @@ const FrenzyTarget:React.FC<IProps> = ({setScore,mapSize,targetSize,setFrenzyTar
         return () => {
             hitTargetSound.play();
             setScore(prevState => prevState + 1);
-            setTargetsCounter(state => state - 1)
             frenzyTargetRef.current.remove();
+            setFrenzyCounter(prev => prev - 1)
         }
     }
 
