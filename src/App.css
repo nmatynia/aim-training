@@ -27,3 +27,21 @@
 .github-link{
   color:white;
 }
+
+.potrait{
+  color: rgba(49, 29, 63, 0.13);
+  font-size: 3vh;
+  margin: 2vh;
+  margin-top:45vh;
+}
+
+@media (orientation:portrait) {
+  .landscape {
+    display:none;
+  }
+}
+@media (orientation:landscape) {
+  .potrait {
+    display:none;
+  }
+}

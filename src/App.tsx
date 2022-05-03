@@ -49,6 +49,8 @@ const App: React.FC = () =>{
 
   return (
     <div className="App">
+      <div className='potrait'>Please switch orientation of your device to landscape mode</div>
+      <div className="landscape">
         <h1 className ="appHeader">Aim Training</h1>
         <Nav 
           setTime={setTime} 
@@ -78,6 +80,7 @@ const App: React.FC = () =>{
           setFrenzyDiff={setFrenzyDiff}
           frenzyDiff ={frenzyDiff}
         />
+        </div>
         <footer className="footer">Norbert Matynia - <a className='github-link' href="https://github.com/nmatynia">github.com/nmatynia</a></footer>
     </div>
   );
