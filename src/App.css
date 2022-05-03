@@ -20,6 +20,8 @@
   width: 100%;
   background-color: #311D3F;
   color: white;
+  height: 2.3vh;
+  font-size:calc(16/937*100vh);
 }
 
 .github-link{
