@@ -31,17 +31,25 @@
 .potrait{
   color: rgba(49, 29, 63, 0.13);
   font-size: 3vh;
-  margin: 2vh;
-  margin-top:45vh;
+  margin: 0 2vh;
 }
 
 @media (orientation:portrait) {
   .landscape {
-    display:none;
+    display: none;
+    visibility: hidden;
+  }
+  .App{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
   }
 }
 @media (orientation:landscape) {
   .potrait {
     display:none;
+    visibility: hidden;
   }
 }
