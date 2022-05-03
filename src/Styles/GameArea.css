@@ -98,16 +98,17 @@
 
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 15vh;
     background-color: #311D3F;
-    font-size: 16px;
+    font-size: 1.7vh;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+    padding: 1.5vh;
+    border-radius: calc((25/937)*100vh);
     position: absolute;
     z-index: 1;
   }
+  
   .tooltip:hover .tooltiptext {
     visibility: visible;
     animation-duration: 0.4s;
