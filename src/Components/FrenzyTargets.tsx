@@ -5,15 +5,17 @@ interface IProps{
     mapSize:number;
     targetSize:number;
     gameStatus:boolean;
+    frenzyTargets:boolean [];
+    setFrenzyTargets:React.Dispatch<React.SetStateAction<boolean[]>>;
     setGameStatus:React.Dispatch<React.SetStateAction<boolean>>;
     setScore:React.Dispatch<React.SetStateAction<number>>;
     frenzyDiff:string;
 }
 
 
-const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,setGameStatus,frenzyDiff}) =>{
+const FrenzyTargets:React.FC<IProps> = ({setScore,mapSize,targetSize,gameStatus,setGameStatus,frenzyDiff,frenzyTargets,setFrenzyTargets}) =>{
 
-    const [frenzyTargets, setFrenzyTargets] = useState<boolean []>([])
+    
     const [counter,setCounter] = useState<number>(0);
     const [frenzyCounter,setFrenzyCounter] = useState<number>(0)
     const endGameSound = new Howl({

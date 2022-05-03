@@ -84,3 +84,42 @@
     font-size: calc(36/937*100vh);
     color: rgba(49, 29, 63, 0.13);
   }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: auto;
+    color:#311D3F;
+    font-size: 28px;
+    z-index: 1;
+    animation-duration: 0.4s;
+    animation-name: tooltip-animation;
+  }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #311D3F;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    animation-duration: 0.4s;
+    animation-name: tooltip-animation;
+  }
+
+  @keyframes tooltip-animation {
+    from {
+      opacity: 0%;
+    }
+  
+    to {
+      opacity: 100%;
+    }
+}

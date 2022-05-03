@@ -1,7 +1,8 @@
-import React,{useRef} from "react";
+import React,{useRef,useState} from "react";
 import "../Styles/GameArea.css";
 import Timer from './Timer';
 import {FaSyncAlt} from 'react-icons/fa';
+import {FaExclamationCircle} from 'react-icons/fa';
 //Sound
 import {Howl} from 'howler';
 //Gamemodes
@@ -27,6 +28,7 @@ interface IProps{
 const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gameStarting,setGameStarting,gameStatus,setGameStatus,gameMode,frenzyDiff}) =>{
 
     const missedClicks = useRef(0);
+    const [frenzyTargets, setFrenzyTargets] = useState<boolean []>([])
 
     const startGameSound = new Howl({
         src: [require("../Sounds/start.ogg")],
@@ -52,6 +54,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
                 setGameStatus(true); 
                 setScore(1);
                 missedClicks.current = 0;
+                setFrenzyTargets([])
             }}
             style={{left:`${(mapSize-targetSize)/2}vh`, top:`${(mapSize-targetSize)/2}vh`, width:`${targetSize}vh`, height:`${targetSize}vh`}}>
         </div>
@@ -68,7 +71,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             return <Target setScore = {setScore} mapSize={mapSize} targetSize={targetSize}/>
         }
         else if(gameMode === "frenzy"){
-            return <FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus} setGameStatus={setGameStatus} frenzyDiff={frenzyDiff}/>
+            return <FrenzyTargets setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus} setGameStatus={setGameStatus} frenzyDiff={frenzyDiff} frenzyTargets={frenzyTargets} setFrenzyTargets={setFrenzyTargets}/>
         }
         else if(gameMode === "trio"){
             return <Trio setScore = {setScore} mapSize={mapSize} targetSize={targetSize} gameStatus={gameStatus}/>
@@ -85,6 +88,7 @@ const GameArea: React.FC<IProps> = ({setScore,score,targetSize,mapSize,time, gam
             <div className="score">SCORE: {score}</div>
             {gameStarting || !gameStatus ? <div className="timer">{formattedTime}</div>:<Timer time={time} setScore={setScore} setGameStatus={setGameStatus}/>}
             {!gameStarting && !gameStatus ? <div className ="accuracy">ACCURACY: {!isNaN(calculatedAccuracy)?calculatedAccuracy:"0"}%</div>: null}
+            {gameMode==="frenzy" && <div className="tooltip" style={{bottom:`calc(-19/937*100vh)`, right:`${-4 - mapSize/2}vh`}}><FaExclamationCircle/><span className="tooltiptext">Currently Frenzy gamemode has some performance issues - fix coming soon.</span></div>}
             
         </div>
     )
