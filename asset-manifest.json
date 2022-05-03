@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/aim-training/static/css/main.8177ef4a.css",
+    "main.css": "/aim-training/static/css/main.0bf045ec.css",
     "main.js": "/aim-training/static/js/main.854e3eef.js",
     "static/js/787.0e4a934c.chunk.js": "/aim-training/static/js/787.0e4a934c.chunk.js",
     "static/media/end.wav": "/aim-training/static/media/end.c98e8be25253fb24a09c.wav",
     "static/media/hittarget.wav": "/aim-training/static/media/hittarget.d4ec004472a98a0648d0.wav",
     "static/media/start.ogg": "/aim-training/static/media/start.3597223389a03ef79004.ogg",
     "index.html": "/aim-training/index.html",
-    "main.8177ef4a.css.map": "/aim-training/static/css/main.8177ef4a.css.map",
+    "main.0bf045ec.css.map": "/aim-training/static/css/main.0bf045ec.css.map",
     "main.854e3eef.js.map": "/aim-training/static/js/main.854e3eef.js.map",
     "787.0e4a934c.chunk.js.map": "/aim-training/static/js/787.0e4a934c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8177ef4a.css",
+    "static/css/main.0bf045ec.css",
     "static/js/main.854e3eef.js"
   ]
 }
