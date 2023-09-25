@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/aim-training/static/css/main.60d89445.css",
-    "main.js": "/aim-training/static/js/main.854e3eef.js",
+    "main.css": "/aim-training/static/css/main.01721d19.css",
+    "main.js": "/aim-training/static/js/main.f7423bef.js",
     "static/js/787.0e4a934c.chunk.js": "/aim-training/static/js/787.0e4a934c.chunk.js",
     "static/media/end.wav": "/aim-training/static/media/end.c98e8be25253fb24a09c.wav",
     "static/media/hittarget.wav": "/aim-training/static/media/hittarget.d4ec004472a98a0648d0.wav",
     "static/media/start.ogg": "/aim-training/static/media/start.3597223389a03ef79004.ogg",
     "index.html": "/aim-training/index.html",
-    "main.60d89445.css.map": "/aim-training/static/css/main.60d89445.css.map",
-    "main.854e3eef.js.map": "/aim-training/static/js/main.854e3eef.js.map",
+    "main.01721d19.css.map": "/aim-training/static/css/main.01721d19.css.map",
+    "main.f7423bef.js.map": "/aim-training/static/js/main.f7423bef.js.map",
     "787.0e4a934c.chunk.js.map": "/aim-training/static/js/787.0e4a934c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.60d89445.css",
-    "static/js/main.854e3eef.js"
+    "static/css/main.01721d19.css",
+    "static/js/main.f7423bef.js"
   ]
 }
